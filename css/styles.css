@@ -1,0 +1,109 @@
+[data-theme="light"] {
+    --blue: #2561ed;
+    --secondBlue: #2561ed;
+    --bg-body: #ebebeb;
+    --bg-main: #f2f2f2;
+    --border-main: #ccc;
+    --h1: #0b0b0b;
+    --bg-h2: #dadada;
+    --h2: #181818;
+    --border-input: 1px solid #aeaeae;
+    --showPass: #686868;
+    --line-showPass: #909090;
+    --button: #fbfbfb;
+    --bg-error: #fcd5d5;
+    --error: #c93333;
+    --scrollbar-thumb: #b8b8b8;
+}
+
+[data-theme="dark"] {
+    --blue: #2351bd;
+    --secondBlue: #3b70ea;
+    --bg-body: #0c0c0c;
+    --bg-main: #151515;
+    --border-main: #2f2f2f;
+    --h1: #eeeeee;
+    --bg-h2: #313131;
+    --h2: #d4d4d4;
+    --border-input: 1px solid #aeaeae;
+    --showPass: #a1a1a1;
+    --line-showPass: #9f9f9f;
+    --button: #fbfbfb;
+    --bg-error: #261d1d;
+    --error: #cb6b6b;
+    --scrollbar-thumb: #2e2e2e;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-body);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Reset */
+a,
+button,
+input {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    flex-direction: column;
+    width: 100%;
+    padding-block: 12vh 8vh;
+}
+
+
+.switch-theme {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.switch-theme ion-icon {
+    position: absolute;
+    color: var(--h1);
+    font-size: 24px;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.switch-theme ion-icon.hide {
+    opacity: 0;
+    transform: scale(.3);
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: var(--scrollbar-thumb);
+}

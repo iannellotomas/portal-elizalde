@@ -1,0 +1,271 @@
+main {
+  width: 400px;
+  background: var(--bg-main);
+  padding: 80px 40px 40px 40px;
+  position: relative;
+  flex-direction: column;
+  border: 1px solid var(--border-main);
+  border-radius: 15px;
+  position: relative;
+}
+
+main>img {
+  object-fit: contain;
+  width: 100px;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+}
+
+h1 {
+  margin: 0 0 10px 0;
+  padding-inline: 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: calc(1.5rem + 1vw);
+  color: var(--h1);
+  text-align: center;
+  z-index: 50;
+}
+
+main .network {
+  gap: 10px;
+  padding: 6px 15px;
+  border-radius: 50px;
+  background: var(--bg-h2);
+  margin-block: 10px 20px;
+  color: var(--h2);
+}
+
+main .network ion-icon {
+  font-size: 18px;
+}
+
+main .network h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+main p {
+  font-size: 14px;
+  text-align: center;
+  max-width: 280px;
+  margin: 0;
+  padding-inline: 10px;
+  color: var(--h1);
+}
+
+main form {
+  flex-direction: column;
+  margin-top: 30px;
+  width: 100%;
+}
+
+form .login-text {
+  width: calc(80% - 30px);
+  max-width: 400px;
+  display: flex;
+  background: none;
+  outline: none;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+form .login-text input {
+  border: var(--border-input);
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-weight: 500;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  color: var(--h1);
+}
+
+form input:focus {
+  outline: 2px solid var(--secondBlue);
+  border-color: transparent;
+}
+
+form .show-pass {
+  padding: 5px;
+  font-size: 20px;
+  color: var(--showPass);
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+}
+
+form .show-pass::before {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: var(--line-showPass);
+  position: absolute;
+  transform: rotate(45deg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+form .show-pass.decrypt::before {
+  opacity: 1;
+}
+
+
+form input:checked+label span span {
+  opacity: 1;
+}
+
+form label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+form label p {
+  font-size: 14px;
+}
+
+.link {
+  color: var(--secondBlue);
+  font-size: 14px;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+form label span {
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+}
+
+form label span span {
+  background: var(--blue);
+  opacity: 0;
+  border-radius: 50%;
+}
+
+
+form button {
+  margin-block: 30px 15px;
+  padding: 10px 40px;
+  border-radius: 50px;
+  background: var(--blue);
+  outline: none;
+  border: 3px solid var(--bg-main);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--button);
+  transition: .3s ease opacity, .3s ease padding;
+  position: relative;
+}
+
+form button:hover {
+  opacity: .9;
+}
+
+form button:active {
+  transform: scale(.95);
+}
+
+
+form .error {
+  background: var(--bg-error);
+  max-width: 400px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  color: var(--error);
+  margin-bottom: 10px;
+}
+
+form .error ion-icon {
+  font-size: 24px;
+}
+
+form .error p {
+  margin: 0;
+  color: var(--error);
+}
+
+form .error.disabled {
+  display: none;
+}
+
+/* Loaded section */
+section.loaded {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-main);
+  flex-direction: column;
+  transition: .3s ease opacity;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 15px;
+}
+
+.loaded ion-icon {
+  font-size: calc(1.5rem + 5vw);
+  color: var(--blue);
+}
+
+.loaded h2 {
+  color: var(--h1);
+  font-size: calc(1.25rem + 1vw);
+  margin: 0 0 10px 0;
+}
+
+.loaded ion-icon,
+.loaded h2,
+.loaded p {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: .5s ease transform, .5s ease opacity;
+  transition-delay: calc(var(--loaded-delay) * .4s);
+}
+
+.loaded.ready {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.loaded.ready ion-icon,
+.loaded.ready h2,
+.loaded.ready p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
+  main {
+    box-shadow: none;
+    width: 90%;
+    min-height: 90vh;
+    padding: 5vh 5%;
+    border: none;
+    border-radius: 0;
+  }
+
+  main>img {
+    position: static;
+    transform: none;
+    margin-bottom: 10px;
+  }
+}

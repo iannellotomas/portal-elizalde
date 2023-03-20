@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <script defer src="./js/app.js"></script>
+    <script defer src="./js/theme.js"></script>
+    <link rel="shortcut icon" href="./img/logo.png">
+    <title>Portal ~ Instituto Padre Elizalde</title>
+</head>
+
+<body>
+    <div class="container center">
+        <main class="flex center">
+            <img src="./img/iperconectados.png" alt="IPErconectados">
+            <h1>Instituto Padre Elizalde</h1>
+            <div class="network center">
+                <ion-icon name="wifi"></ion-icon>
+                <h2>Segundo Alumnos</h2>
+            </div>
+            <p>Para acceder a la red completa tus datos vinculados al Instituto.</p>
+            <form action="" class="flex center">
+                <div class="error disabled">
+                    <ion-icon name="alert-circle-outline"></ion-icon>
+                    <p></p>
+                </div>
+                <label for="input-user" class="login-text">
+                    <input class="m-20 center-text" type="text" id="input-user" placeholder="Nombre de usuario">
+                </label>
+                <label for="input-pass" class="login-text">
+                    <input class="m-20 center-text" type="password" id="input-pass" placeholder="Contraseña">
+                    <div class="show-pass center">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </label>
+
+                <!-- <input type="checkbox" id="terms" hidden>
+                <label for="terms">
+                    <span class="center"><span></span></span>
+                    <p>Acepto los <a href="#" class="link">términos y condiciones</a>.</p>
+                </label> -->
+                <button class="flex">Conectarse</button>
+                <a href="#" class="link">¿Todavía no te registraste?</a>
+            </form>
+            <section class="loaded center">
+                <ion-icon name="checkmark-done-outline"></ion-icon>
+                <h2 style="--loaded-delay: 1;">¡Listo!</h2>
+                <p style="--loaded-delay: 2;">Ya te conectaste a la red institucional.</p>
+            </section>
+        </main>
+        <button class="switch-theme center">
+            <ion-icon class="theme-dark" name="moon-outline"></ion-icon>
+            <ion-icon class="theme-light" name="sunny-outline"></ion-icon>
+        </button>
+    </div>
+
+
+    <!-- IONICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
